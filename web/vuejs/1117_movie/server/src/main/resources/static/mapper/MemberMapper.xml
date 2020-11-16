@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.movie.mapper.MemberMapper">
+	<select id="selectUseridAndUserpwd" resultType="MemberDto">
+		SELECT userid, nickname, userphone, role
+		FROM user
+		WHERE userid=#{userid} AND userpwd=#{userpwd}
+	</select>
+	
+	<select id="selectUserid" resultType="MemberDto">
+		SELECT userid FROM user WHERE userid=#{userid}
+	</select>
+	
+	<insert id="insertUser" parameterType="MemberDto">
+		INSERT INTO user (userid, nickname, userpwd, userphone)
+		VALUES (#{userid}, #{nickname}, #{userpwd}, #{userphone})
+	</insert>
+</mapper>

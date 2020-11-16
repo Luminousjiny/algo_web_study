@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.movie.mapper.ReviewMapper">
+	<select id="selectReviewList" resultType="ReviewDto">
+		SELECT rno, mno, rwriter, rcontent, rdate
+		FROM review
+		WHERE mno=#{mno}
+	</select>
+	
+	<insert id="insertReview" parameterType="ReviewDto">
+		INSERT INTO review (mno, rwriter, rcontent, rdate)
+		VALUES (#{mno}, #{rwriter}, #{rcontent}, CURDATE())
+	</insert>
+
+	<update id="updateReview">
+		UPDATE review
+		SET rdate=CURDATE(), rcontent=#{rcontent}
+		WHERE rno=#{rno}
+	</update>
+
+	<delete id="deleteReview">
+		DELETE FROM review
+		WHERE rno=#{rno}
+	</delete>
+</mapper>

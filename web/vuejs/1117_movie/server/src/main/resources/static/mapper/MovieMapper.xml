@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.movie.mapper.MovieMapper">
+	<select id="selectTotalCount" resultType="int">
+		SELECT COUNT(*) FROM movie
+	</select>
+	
+	<select id="selectPage" resultType="MovieDto">
+		SELECT mno, mtitle, mcontent, mdirector, mdate
+		FROM movie
+		ORDER BY mno
+		LIMIT #{startRow} , #{cnt}
+	</select>
+	
+	<select id="selectOne" resultType="MovieDto">
+		SELECT mno, mtitle, mcontent, mdirector, mdate
+		FROM movie
+		WHERE mno=#{mno}
+	</select>
+	
+	<select id="selectMovie" parameterType="MovieDto" resultType="MovieDto">
+		SELECT * 
+		FROM movie 
+		WHERE mtitle=#{mtitle} AND mdirector=#{mdirector}
+	</select>
+	
+	<insert id="insert" parameterType="MovieDto">
+		INSERT INTO movie (mtitle, mcontent, mdirector, mdate)
+		VALUES (#{mtitle}, #{mcontent}, #{mdirector}, CURDATE())
+	</insert>
+	
+	<update id="updateMovie" parameterType="MovieDto">
+		UPDATE movie SET mtitle=#{mtitle}, mcontent=#{mcontent}, mdirector=#{mdirector}, mdate=CURDATE()
+		WHERE mno=#{mno} 
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM movie
+		WHERE mno=#{mno}	
+	</delete>
+</mapper>
