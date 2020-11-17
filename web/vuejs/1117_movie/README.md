@@ -9,11 +9,11 @@
 1. Front : Vue.js
 2. Back : Spring Boot
 
-- API 문서
+- API 문서  
   http://localhost:8097/movieboard/swagger-ui.html# 에서 확인 가능
   Spring boot 실행 후 접속 가능함
-- client 폴더
+- client 폴더  
   vue로 만든 페이지 자기 폴더 만들어서 넣기
-- server 폴더
-  spring boot기반 REST 서버 있음
+- server 폴더  
+  spring boot기반 API 서버 있음
 - 화이팅

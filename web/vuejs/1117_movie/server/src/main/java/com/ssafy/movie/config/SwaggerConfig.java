@@ -29,7 +29,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("MOVIE API")
-                .description("<h3>MOVIE API Reference for 진이, 다운</h3>스터디용 MOVIE API")
+                .description("<h3>Vue.js 연습용 API</h3>스터디용 MOVIE API")
                 .build();
     }
 
