@@ -36,10 +36,10 @@
         <tbody>
           <tr v-for="c in comments" v-bind:key="c.rno">
               <td>{{ c.rno }}</td>
-              <td>{{ c.rwriter }}</td>
-              <td>{{ c.rdate }}</td>
-              <td>{{ c.rcontent }}</td>
-              <td><button @click="updateReview">수정</button></td>
+              <td><input type="text" name="rwriter" v-model="c.rwriter"></td>
+              <td><input type="date" name="rdate" v-model="c.rdate"></td>
+              <td><input type="text" name="rcontent" v-model="c.rcontent"></td>
+              <td><button @click="updateReview(c)">수정</button></td>
               <td><button @click="deleteReview(c.rno)">삭제</button></td>
           </tr>
         </tbody>
@@ -85,11 +85,16 @@ export default {
         return {
             movie : [],
             comments: [],
-            comment:{
+            comment:{ //댓글 입력 데이터
               rcontent:'',
               rdate:'',
               rwriter:'ssafy',
             },
+            c:{ //댓글 수정 데이터
+              rcontent:'',
+              rdate:'',
+              rwriter:'ssafy',
+            }
         }
     },
     methods: {
@@ -124,8 +129,15 @@ export default {
               console.log(ex);
           })
         },
-        updateReview(){
-          
+        updateReview(c){
+          axios.put('http://localhost:8097/movieboard/api/reviews/' + c.rno, c)
+          .then((resp)=>{
+              alert(resp.data);
+              this.$router.push('/MovieList');
+          })
+          .catch((ex)=>{
+              console.log(ex);
+          })
         }
     },
 }

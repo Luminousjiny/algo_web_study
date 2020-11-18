@@ -3,19 +3,19 @@
        <table>
         <tr>
           <th>영화 제목</th>
-          <td><input type="text" name="mtitle" v-model="movie.mtitle" required /></td>
+          <td><input type="text" name="mtitle" v-model="movie.mtitle" required/></td>
         </tr>
         <tr>
           <th>영화 개봉일</th>
-          <td><input type="date" name="mdate" v-model="movie.mdate" /></td>
+          <td><input type="date" name="mdate" v-model="movie.mdate" required/></td>
         </tr>
         <tr>
           <th>영화 감독</th>
-          <td><input type="text" name="mdirector" v-model="movie.mdirector" /></td>
+          <td><input type="text" name="mdirector" v-model="movie.mdirector" required/></td>
         </tr>
         <tr>
           <th>영화 줄거리</th>
-          <td><textarea rows="10" cols="50" name="mcontent" v-model="movie.mcontent" /></td>
+          <td><textarea rows="10" cols="50" name="mcontent" v-model="movie.mcontent" required/></td>
         </tr>
       </table>
       <button><a href="#" @click="update">수정하기</a></button>
@@ -48,7 +48,6 @@ export default {
             })
           }
         },
-    
 }
 </script>
 
