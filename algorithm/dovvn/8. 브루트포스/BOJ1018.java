@@ -70,3 +70,4 @@ public class Main {
         Ans = Math.min(Ans, count2);
     }
 }
+ 
