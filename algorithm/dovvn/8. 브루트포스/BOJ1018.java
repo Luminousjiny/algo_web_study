@@ -1,6 +1,9 @@
-import java.util.Scanner;
 
-//체스판 다시 칠하기
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 public class Main {
 
     static int N;
@@ -28,73 +31,42 @@ public class Main {
             {'W','B','W','B','W','B','W','B'}
 
     };
-    static int Ans = Integer.MAX_VALUE;
+    static int Ans = 64;
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        N = sc.nextInt();
-        M = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
         map = new char[N][M];
 
         for (int i=0; i<N; i++){
-            String s = sc.next();
-            for(int j=0; j<M; j++){
-                map[i][j] = s.charAt(j);
-            }
+                map[i] = br.readLine().toCharArray();
         }//End input
 
-        //1. 8*8로 자르기
-        int dist = 7;
-
-        for(int i=0; i<N; i++){
-            int startR = i;
-            if(i+dist>=N) break;
-            int endR = i+dist;
-
-            for(int j=0; j<M; j++){
-                int startC = j;
-                if(j+dist>=M) break;
-                int endC = j+dist;
+        //1. 8*8로 잘랐을때 첫 시작 위치 구하기
+        for(int i=0; i<N-7; i++){
+            for(int j=0; j<M-7; j++){
                 //2. 다시 칠해야 하는 개수 구하기
-                draw(startR, endR, startC, endC);
+                draw(i, j);
             }
         }
 
         System.out.println(Ans);
     }
 
-    private static void draw(int startR, int endR, int startC, int endC){
-        int[][] chess = new int[8][8];
-        int r=0;
-        int c=0;
+    private static void draw(int ni, int nj){
+        int count1=0;
+        int count2=0;
 
-        for(int i = startR; i<=endR; i++){
-            for(int j=startC; j<=endC; j++){
-                chess[r][c] = map[i][j];
-                c++;
-            }
-            c = 0;
-            r++;
-        }
-
-        int count = 0; //새로 칠해야 하는 개수
-
-        //case1이랑 비교
-        for(int i=0; i<8; i++){
-            for(int j=0; j<8; j++){
-                if(chess[i][j] != case1[i][j]) count++;
+        for(int i = ni; i<=ni+7; i++){
+            for(int j=nj; j<=nj+7; j++){
+                if(map[i][j] != case1[i-ni][j-nj]) count1++;
+                if(map[i][j] != case2[i-ni][j-nj]) count2++;
             }
         }
-        Ans = Math.min(Ans, count);
 
-        //case2랑 비교
-
-        count = 0;
-        for(int i=0; i<8; i++){
-            for(int j=0; j<8; j++){
-                if(chess[i][j] != case2[i][j]) count++;
-            }
-        }
-        Ans = Math.min(Ans, count);
+        Ans = Math.min(Ans, count1);
+        Ans = Math.min(Ans, count2);
     }
 }
