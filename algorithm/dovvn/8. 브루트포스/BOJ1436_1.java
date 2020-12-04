@@ -22,6 +22,6 @@ public class Main {
                 break;
             }
             num++;
-        }
+        } 
     }
 }
