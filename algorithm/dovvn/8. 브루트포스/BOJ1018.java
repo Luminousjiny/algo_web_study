@@ -30,7 +30,7 @@ public class Main {
             {'B','W','B','W','B','W','B','W'},
             {'W','B','W','B','W','B','W','B'}
 
-    };
+    }; 
     static int Ans = 64;
 
     public static void main(String[] args) throws IOException {
