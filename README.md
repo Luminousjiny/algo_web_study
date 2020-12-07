@@ -19,7 +19,7 @@
 2. 웹 : Vue.js + Spring Boot
    - 12/03(목) 자율 웹PJT 주제 정하기
    - 12/06(일) 프로젝트 구조 짜기
-     > 😎[정다운, 유진이 ](https://www.notion.so/dovvn/12-Vue-Spring-Boot-PJT-5f43e5279db347298737320de14e2096)  
+     > 😎[정다운, 유진이 ](https://www.notion.so/12-Vue-Spring-Boot-PJT-5f43e5279db347298737320de14e2096)  
      > 😿[김민혁, 백정현 ](https://www.notion.so/3cec21ede80a4e8e934784d92ad8a0e6)
      1. 주요 기능 뭐 있는지
         - 주변 강아지 카페 보여주기, 게시판, 로그인, 등등...
