@@ -19,8 +19,8 @@
 2. 웹 : Vue.js + Spring Boot
    - 12/03(목) 자율 웹PJT 주제 정하기
    - 12/06(일) 프로젝트 구조 짜기
-      > 😎정다운(https://www.notion.so/dovvn/12-Vue-Spring-Boot-PJT-5f43e5279db347298737320de14e2096)
-     1. 주요 기능 뭐 있는지
+      > 😎[정다운](https://www.notion.so/dovvn/12-Vue-Spring-Boot-PJT-5f43e5279db347298737320de14e2096)  
+     1. 주요 기능 뭐 있는지  
         - 주변 강아지 카페 보여주기, 게시판, 로그인, 등등...
         - 어떤 데이터가 필요한지, 어떻게 데이터를 얻을지(DB or API)
      2. Front
