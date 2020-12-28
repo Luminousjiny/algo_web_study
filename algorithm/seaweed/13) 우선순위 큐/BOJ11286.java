@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 
 public class BOJ11286 {
     static int N;
-    static PriorityQueue<day1221.BOJ11286.Num> pq1; // Comparable 사용
+    static PriorityQueue<Num> pq1; // Comparable 사용
     static PriorityQueue<Integer> pq2; // Comparator 사용
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,7 +25,7 @@ public class BOJ11286 {
             if (curr == 0) {
                 sb.append(pq1.isEmpty() ? 0 : pq1.poll().n).append("\n");
             } else {
-                pq1.add(new day1221.BOJ11286.Num(curr));
+                pq1.add(new Num(curr));
             }
         }
 
@@ -56,7 +56,7 @@ public class BOJ11286 {
         System.out.println(sb.toString());
     }
 
-    static class Num implements Comparable<day1221.BOJ11286.Num> {
+    static class Num implements Comparable<Num> {
         int n;
 
         public Num(int n) {
@@ -64,7 +64,7 @@ public class BOJ11286 {
         }
 
         @Override
-        public int compareTo(day1221.BOJ11286.Num o) {
+        public int compareTo(Num o) {
             if (Math.abs(this.n) == Math.abs(o.n))
                 return Integer.compare(this.n, o.n);
             return Integer.compare(Math.abs(this.n), Math.abs(o.n));
