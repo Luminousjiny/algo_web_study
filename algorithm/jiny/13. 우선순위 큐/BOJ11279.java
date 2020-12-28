@@ -19,8 +19,6 @@ public class BOJ11279 {
                 int size = pq.size();
                 if(size == 0) {
                     sb.append(0).append("\n");
-                } else if( size == 1){
-                    sb.append(pq.poll()).append("\n");
                 } else{
                     sb.append(pq.poll()).append("\n");
                 }
