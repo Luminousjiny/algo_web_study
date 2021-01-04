@@ -13,7 +13,7 @@ public class BOJ1920 {
      * 1 <= M <= 100,000
      */
     static int N, M;
-    static int[] arrN, arrM;
+    static int[] arr;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
@@ -21,40 +21,34 @@ public class BOJ1920 {
 
         //========데이터 입력==============
         N = Integer.parseInt(br.readLine());
-        arrN = new int[N];
+        arr = new int[N];
 
         st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < N; ++i) {
-            arrN[i] = Integer.parseInt(st.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
         M = Integer.parseInt(br.readLine());
-        arrM = new int[M];
 
+        Arrays.sort(arr);
+        //=================================
         st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < M; ++i) {
-            arrM[i] = Integer.parseInt(st.nextToken());
-        }
-
-        Arrays.sort(arrN);
-        //=================================
-
-        for (int m : arrM) {
-            sb.append(binarySearch(0, N - 1, m) ? 1 : 0).append("\n");
+            sb.append(binarySearch(0, N - 1, Integer.parseInt(st.nextToken())) ? 1 : 0).append("\n");
         }
         System.out.println(sb.toString());
     }
 
     static boolean binarySearch(int start, int end, int target) {
-        if (start == end)
-            return arrN[start] == target;
+        if (start > end)
+            return false;
 
         int mid = (start + end) / 2;
 
-        if (arrN[mid] == target)
+        if (arr[mid] == target)
             return true;
-        else if (arrN[mid] > target){
-            return binarySearch(start, mid, target);
+        else if (arr[mid] > target){
+            return binarySearch(start, mid - 1, target);
         } else {
             return binarySearch(mid + 1, end, target);
         }
