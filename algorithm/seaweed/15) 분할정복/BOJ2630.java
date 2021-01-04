@@ -30,14 +30,6 @@ public class BOJ2630 {
     }
 
     static void checkPaper(int si, int sj, int size) {
-        if (size == 1) {
-            if (paper[si][sj] == '0')
-                ++cntWhite;
-            else
-                ++cntBlue;
-            return;
-        }
-
         if (check(si, sj, size)) {
             if (paper[si][sj] == '0')
                 ++cntWhite;
