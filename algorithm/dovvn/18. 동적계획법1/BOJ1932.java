@@ -20,8 +20,8 @@ public class Main {
             for(int j=0; j<i+1; j++){
                 arr[i][j]  = sc.nextInt();
                 if(i==0) continue;
-                else if(j==0) arr[i][j] = arr[i-1][j] + arr[i][j];
-                else arr[i][j] = Math.max(arr[i-1][j-1],arr[i-1][j]) + arr[i][j];
+                else if(j==0) arr[i][j] += arr[i-1][j];
+                else arr[i][j] += Math.max(arr[i-1][j-1],arr[i-1][j]);
             }
         }//End input
 
