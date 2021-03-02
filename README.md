@@ -58,7 +58,8 @@
      |2월 1주차|17142|[연구소3](https://www.acmicpc.net/problem/17142)|GoldⅣ|2월 8일|
      |2월 4주차|17779|[게리맨더링2](https://www.acmicpc.net/problem/17779)|GoldⅣ|3월 1일|
      |2월 4주차|17837|[새로운게임2](https://www.acmicpc.net/problem/17837)|GoldⅡ|3월 1일|
-     |2월 4주차|20061|[모노미노도미노2](https://www.acmicpc.net/problem/20061)|GoldⅡ|3월 1일|
+     |3월 1주차|19236|[청소년 상어](https://www.acmicpc.net/problem/19236)|GoldⅡ|3월 8일|
+     |3월 1주차|20058|[마법사 상어와 파이어스톰](https://www.acmicpc.net/problem/20058)|GoldⅣ|3월 8일|  
      
 2. 웹 : Vue.js + Spring Boot
    - ✅ 12/03(목) 자율 웹PJT 주제 정하기
